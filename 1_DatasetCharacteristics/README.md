@@ -29,13 +29,13 @@
 
 **Example format:**
 Spatio-Temporal Features This group defines where and when the measurement took place.
-    Feature 1 (longitude / longitude_scaled): [Geographic longitude of the location. Data type: Float. Represents the East-West position of the parking zone.]
-    Feature 2 (latitude / latitude_scaled): [Geographic latitude of the location. Data type: Float. Represents the North-South position of the parking zone.]
-    Feature 3 (hour): [Hour of the day (0-23). Data type: Integer/Categorical. Critical for identifying daily patterns (e.g., rush hour, night time).]
-    Feature 4 (day_of_week): [Day of the week (e.g., 0=Monday to 6=Sunday). Data type: Integer/Categorical. Distinguishes between weekdays and weekends.]
-    Feature 5 (month_of_year): [Month of the year (1-12). Data type: Integer/Categorical. Captures seasonal effects.]
+  -  Feature 1 (longitude / longitude_scaled): [Geographic longitude of the location. Data type: Float. Represents the East-West position of the parking zone.]
+   - Feature 2 (latitude / latitude_scaled): [Geographic latitude of the location. Data type: Float. Represents the North-South position of the parking zone.]
+   - Feature 3 (hour): [Hour of the day (0-23). Data type: Integer/Categorical. Critical for identifying daily patterns (e.g., rush hour, night time).]
+   - Feature 4 (day_of_week): [Day of the week (e.g., 0=Monday to 6=Sunday). Data type: Integer/Categorical. Distinguishes between weekdays and weekends.]
+   - Feature 5 (month_of_year): [Month of the year (1-12). Data type: Integer/Categorical. Captures seasonal effects.]
 Contextual Features Additional information regarding the measurement context.
-    Feature 6 (total_count): [The total number of vehicles detected in this zone at this time. Data type: Integer. Serves as a weighting factor for the significance of the invalid_ratio (e.g., a ratio derived from total_count=100 is statistically more significant than one derived from total_count=1).]
+   - Feature 6 (total_count): [The total number of vehicles detected in this zone at this time. Data type: Integer. Serves as a weighting factor for the significance of the invalid_ratio (e.g., a ratio derived from total_count=100 is statistically more significant than one derived from total_count=1).]
 
 ## Exploratory Data Analysis
 
