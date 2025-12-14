@@ -2,15 +2,17 @@
 
 ## Repository Link
 
-[[https://github.com/your_username/your_project_name](https://github.com/vitalisor/parking_violations_prediction)]
+[https://github.com/your_username/your_project_name](https://github.com/vitalisor/parking_violations_prediction)
 
 ## Description
 
-[Short project description here. Briefly summarize the problem you are trying to solve and the approach you're taking.]
+This project aims to predict the invalid parking ratio (invalid_ratio) for specific geographic zones and timeframes. 
+The problem is to identify patterns in illegal parking based on spatio-temporal features such as location (latitude/longitude), 
+traffic volume (total_count), and time (hour, day, month).
 
 ### Task Type
 
-[Image Classification / Chatbot / Regression / Clustering / Other]
+Regression (Tabular Data)
 
 ### Results Summary
 
