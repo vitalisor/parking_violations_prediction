@@ -6,9 +6,9 @@
 
 ## Description
 
-This project aims to predict the invalid parking ratio (invalid_ratio) for specific geographic zones and timeframes. 
+This project aims to predict the invalid parking ratio (`invalid_ratio`) for specific geographic zones and timeframes. 
 The problem is to identify patterns in illegal parking based on spatio-temporal features such as location (latitude/longitude), 
-traffic volume (total_count), and time (hour, day, month).
+traffic volume (`total_count`), and time (hour, day, month).
 
 ### Task Type
 
@@ -17,20 +17,22 @@ Regression (Tabular Data)
 ### Results Summary
 
 #### Best Model Performance
-- **Best Model:** [Name and type of the best-performing model"]
-- **Evaluation Metric:** [Primary metric used, e.g., Accuracy, F1-Score, MSE, MAE]
-- **Final Performance:** [Best score achieved, e.g., 95% accuracy, F1-score of 0.87, MSE of 0.12]
+- **Best Model:** CatBoost Regressor (Gradient Boosting with Native Categorical Support)
+- **Evaluation Metric:** Spearman Rank Correlation (Primary) and Mean Squared Error (MSE)
+- **Final Performance:** Spearman Correlation of **~0.545**, MSE of **~0.039**
 
 #### Model Comparison
-- **Baseline Performance:** [Baseline model performance for comparison]
-- **Improvement Over Baseline:** [Quantitative improvement, e.g., "+12% accuracy", "25% reduction in MSE"]
-- **Best Alternative Model:** [Second-best model and its performance]
+- **Baseline Performance:** Random Forest Regressor (Spearman: ~0.452, MSE: ~0.045)
+- **Improvement Over Baseline:** ~0.093 increase in Spearman Correlation (+20.5% relative improvement)
+- **Best Alternative Model:** Multi-Input Deep Neural Network with Spatial Embeddings via K-Means Clustering (Spearman: ~0.518, MSE: ~0.041)
 
 #### Key Insights
-- **Most Important Features:** [Top 3-5 features that drive model performance]
-- **Model Strengths:** [What the model does well]
-- **Model Limitations:** [Known limitations and failure cases]
-- **Business Impact:** [Practical implications of the model performance]
+- **Most Important Features:** 1. Geographic Location (Represented natively in CatBoost or via K-Means Zone_ID in the Neural Network)
+  2. Traffic Volume (`total_count`)
+  3. Time of Day (`hour`)
+- **Model Strengths:** The CatBoost model effectively captures complex, non-linear patterns in tabular data and handles categorical features (like day, month, hour) natively, bypassing the massive memory overhead of one-hot encoding. It excels at ranking the relative risk of different zones.
+- **Model Limitations:** While highly accurate on seen data distributions, tree-based models generally struggle to extrapolate outside the boundaries of the training data (e.g., predicting for a completely new, unseen city area).
+- **Business Impact:** A high Spearman score indicates the model correctly ranks zones by their violation risk. This allows parking enforcement agencies to move away from random patrols and instead strategically prioritize high-risk areas, significantly optimizing resource allocation and patrol efficiency.
 
 ## Documentation
 
